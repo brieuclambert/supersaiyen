@@ -1,2 +1,188 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<header>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6">
+            <a href="index.html" class="logo-white-navbar">Legali<span class="color-green">.</span>io<!-- <img src="img/logo.svg" alt="Logo"> --></a>
+          </div>
+          <div class="col-xs-6 signin text-right navbar-nav">
+            <a href="#pricing" class="scroll">Notre offre</a>&nbsp; &nbsp;<a href="#" class="sign-in-btn">Mon compte</a>
+          </div>
+        </div>
+
+        <div class="row header-info">
+          <div class="col-sm-10 col-sm-offset-1 text-center">
+            <h1 class="wow fadeIn">Legali<span class="color-green">.</span>io</h1>
+            <br />
+            <p class="lead wow fadeIn" data-wow-delay="0.5s">Le logiciel Saas ultra-sécurisé à destination des avocats pour manager votre portefeuille client, votre communication et vos calculs de manière rapide et efficace. </p>
+            <br />
+
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                <div class="row">
+                  <div class="col-xs-6 text-right wow fadeInUp" data-wow-delay="1s">
+                    <a href="#be-the-first" class="btn btn-secondary btn-lg scroll min-width-250px">En savoir +</a>
+                  </div>
+                  <div class="col-xs-6 text-left wow fadeInUp" data-wow-delay="1.4s">
+                    <a href="#invite" class="btn btn-primary btn-lg scroll min-width-250px">Demander une démo</a>
+                  </div>
+                </div><!--End Button Row-->
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mouse-icon hidden-xs">
+        <div class="scroll"></div>
+      </div>
+
+    <section id="be-the-first" class="pad-xl">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 text-center margin-30 wow fadeIn" data-wow-delay="0.6s">
+            <h2>Opter pour la simplicité</h2>
+            <p class="lead">Ne perdez plus de temps grâce à Legali.io</p>
+          </div>
+        </div>
+
+        <div class="iphone wow fadeInUp" data-wow-delay="1s">
+        <%= image_tag ("mac.png") %>
+        </div>
+      </div>
+    </section>
+
+    <section id="main-info" class="pad-xl padding-top-200px ">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="0.4s">
+            <hr class="line blue">
+            <h3>Gestion de votre portefeuille client</h3>
+            <p>Accédez en un click à l'historique de vos clients, ses données et ses fichiers fortement protégés par notre connexion HTTPS</p>
+          </div>
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="0.8s">
+            <hr  class="line green">
+            <h3>Augmenter votre business</h3>
+            <p>Le pack inclus une offre communication à forte valeur ajoutée : référencement, landing page, formulaire de contact, ... Notre logiciel vous permettra aussi de générer de devis et des factures très rapidement en entrant uniquement vos heures de travail.</p>
+          </div>
+          <div class="col-sm-4 wow fadeIn" data-wow-delay="1.2s">
+            <hr  class="line grey">
+            <h3>Des outils de calcul performants</h3>
+            <p>Nous avons développé de nombreux outils de calcul performants avec enregistrement progressif des données pour vous éviter de vous faire perdre du temps à recalculer votre dossier</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!--Pricing-->
+    <section id="pricing" class="pad-lg">
+      <div class="container">
+        <div class="row margin-40">
+          <div class="col-sm-8 col-sm-offset-2 text-center">
+            <h2 class="white">Notre offre</h2>
+            <p class="white">blablablabla</p>
+          </div>
+        </div>
+
+        <div class="row margin-50">
+
+          <div class="col-sm-4 pricing-container wow fadeInUp" data-wow-delay="1s">
+            <br />
+            <ul class="list-unstyled pricing-table text-center">
+              <li class="headline"><h5 class="white">Pack Basique</h5></li>
+              <li class="price"><div class="amount">46 €<small>/ mois</small></div></li>
+              <li class="info">2 row section for you package information. You can include all details or icons</li>
+              <li class="features first">Jusqu'à 500 clients</li>
+              <li class="features">Données ultra-protégées</li>
+              <li class="features">Kit communication</li>
+              <li class="features last btn btn-secondary btn-wide"><a href="#">Je fonce !</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-4 pricing-container wow fadeInUp" data-wow-delay="0.4s">
+            <ul class="list-unstyled pricing-table active text-center">
+              <li class="headline"><h5 class="white">Pack +2 Modules</h5></li>
+              <li class="price"><div class="amount">64 €<small>/ mois</small></div></li>
+              <li class="info">Tous les avantages précédéents + un module de calcule</li>
+              <li class="features first">Jusqu'à 1.000 clients</li>
+              <li class="features">Données ultra protégées</li>
+              <li class="features">Serveur illimité</li>
+              <li class="features">Kit communication</li>
+              <li class="features last btn btn-secondary btn-wide"><a href="#">Je choisis mon module</a></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-4 pricing-container wow fadeInUp" data-wow-delay="1.3s">
+            <br />
+            <ul class="list-unstyled pricing-table text-center">
+              <li class="headline"><h5 class="white">Pack Expert</h5></li>
+              <li class="price"><div class="amount">+ 100 €<small>/ mois</small></div></li>
+              <li class="info">Nous développons une offre et un service personnalisable selon votre besoin et votre budget</li>
+              <li class="features first">Clients illimités</li>
+              <li class="features">Serveur illimité</li>
+              <li class="features">Kit communication personnalisé</li>
+              <li class="features last btn btn-secondary btn-wide"><a href="#">Je demande un devis</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="invite" class="pad-lg light-gray-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 text-center">
+            <i class="fa fa-envelope-o margin-40"></i>
+            <h2 class="black">Demander une démo gratuitement</h2>
+            <br />
+            <p class="black">Laissez-nous vos coordonnées et nous vous contacterons le plus rapidement possible</p>
+            <br />
+
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <form role="form">
+                  <div class="form-group" style="display:flex;justify-content: space-between;">
+                    <input type="email" class="form-control max-width-230px" id="exampleInputEmail1" placeholder="brieuc@legali.io">
+                    <input type="phone" class="form-control max-width-230px" id="exampleInputEmail2" placeholder="06 30 82 XX XX">
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg">Je demande une démo</button>
+                </form>
+              </div>
+            </div><!--End Form row-->
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="press" class="pad-sm">
+      <div class="container">
+
+        <div class="row margin-30 news-container">
+          <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 wow fadeInLeft" data-wow-delay="0.8s">
+            <a href="#" target="_blank">
+            <img class="news-img pull-left" src="img/lawyer_one.png" alt="Tech Crunch">
+            <p class="black">Legali.io m'a fait économiser des heures de travail chaque semaine pour me consacrer à une meilleure réflexion sur les cas et un meilleur relationnel client. Je recommande fortement !<br />
+            <small><em>Cabinet Lawyer 4ever - Annecy, France</em></small></p>
+            </a>
+          </div>
+        </div>
+
+        <div class="row margin-30 news-container">
+          <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 wow fadeInLeft" data-wow-delay="1.2s">
+            <a href="#" target="_blank">
+            <img class="news-img pull-left" src="img/lawyer_two.png" alt="Forbes">
+            <p class="black">Grâce au temps économisé avec l'utilisation de Legali.io et aux conseils fortement utiles de la team, j'ai pu développer mon business par 3 et augmenter mon chiffre d'affaire par 10 ! <br />
+            <small><em>Cabinet Teitler - Paris 11e, France</em></small></p>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
