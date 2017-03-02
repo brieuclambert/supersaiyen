@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-offline-4 col-md-4">
+      <h1>Ajouter un dossier pour : <%= @client.nom %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offline-4 col-md-4">
+      <%= simple_form_for [@client, @dossier] do |f| %>
+      <%= f.input :nom %>
+      <%= f.input :juridiction %>
+      <%= f.input :adversaire %>
+      <%= f.input :categorie %>
+      <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
