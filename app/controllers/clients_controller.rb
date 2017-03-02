@@ -17,7 +17,7 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(client_params)
     if @client.save
-      redirect_to pages_dashboard_path
+      redirect_to dashboard_path
     else
       render "new"
     end
