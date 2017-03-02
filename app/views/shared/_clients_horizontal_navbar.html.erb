@@ -1,0 +1,5 @@
+<div class="display-flex-row flex-space-between">
+  <h2 class="color-dark-blue padding-left-20px font-size-30px font-weight-300">CLIENTS | <span class="color-green"><% if !@article.nil? %><%= @client.first_name %><% end %></span></h2>
+
+  <%= link_to "Nouveau Client", new_client_path, class:"padding-20px" %>
+</div>

@@ -707,7 +707,7 @@ footer {
 }
 .sign-in-btn {
   padding: 10px;
-    border-radius: 3Px;
+    border-radius: 3px;
     border: 1px solid white;
     margin-left: 20px;
 }
@@ -717,5 +717,56 @@ footer {
   cursor:pointer;
 }
 
+.bg-dark-blue {
+  background-color: #1B3C59;
+}
+
+.color-dark-blue {
+  color: #1B3C59;
+}
 
 
+.hover-bg-grey:hover {
+  background-color:#456173;
+}
+
+.color-white {
+  color:white;
+}
+
+.padding-left-20px {
+  padding-left:20px;
+}
+
+.padding-20px {
+  padding:20px;
+}
+
+.hover-white:hover {
+  color:white;
+}
+
+.font-size-30px {
+  font-size:30px;
+}
+
+.font-weight-300 {
+  font-weight:300;
+}
+
+.display-flex-row {
+  display:flex;
+  flex-direction:row;
+}
+
+.flex-space-between {
+  justify-content:space-between;
+}
+
+.overflow-hidden {
+  overflow:hidden;
+}
+
+.margin-right-5px {
+  margin-right:5px;
+}

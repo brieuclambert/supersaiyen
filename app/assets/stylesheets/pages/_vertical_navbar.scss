@@ -1,0 +1,57 @@
+.menu-left {
+  width: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  text-align:center;
+  .user-profile {
+    padding: 15px 5px 0 5px;
+  }
+  .user-info-xs {
+    h2 {
+      font-size: 15px;
+      font-weight: 100;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+  }
+  .avatar {
+    width: 60px;
+    height:60px;
+    border-radius: 50%;
+    background-color: white;
+  }
+  .avatar-xs {
+    width: 80%;
+    height:auto;
+    border-radius: 50%;
+    background-color: white;
+  }
+  .menu-card {
+    padding: 5px 15px;
+    h3 {
+      color:white;
+      margin:0;
+    }
+  }
+  .menu-card.active {
+    border-left: 3px solid #11BFAE;
+    background-color:#456173;
+  }
+  .menu-card:hover {
+    cursor:pointer;
+    background-color:#456173;
+  }
+  .green-separator {
+    border-bottom: 1px solid #11BFAE;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom:20px;
+  }
+}
+
+.content-right {
+  padding-left:50px;
+}
