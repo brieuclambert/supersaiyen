@@ -1,0 +1,35 @@
+<div class="menu-left bg-dark-blue color-white">
+    <!-- SHORT PROFILE  -->
+    <div class="user-profile">
+      <% avatar_url =  "https://cdn4.iconfinder.com/data/icons/linecon/512/photo-512.png" %>
+      <div class="user-info-xs">
+        <%= image_tag avatar_url, class:"avatar-xs" %>
+         <h2>A.W.</h2>
+      </div>
+      <div class="user-info hidden">
+        <%= image_tag avatar_url, class:"avatar" %>
+        <h2>Prénom</h2>
+      </div>
+    </div>
+    <!-- SEPARATOR -->
+    <div class="green-separator">
+    </div>
+    <!-- EDIT CLIENTS -->
+    <%= link_to clients_path do %>
+      <div class="menu-card active">
+        <h3><i class="fa fa-address-book" aria-hidden="true"></i></h3>
+      </div>
+    <% end %>
+    <!-- EDIT CALCUL -->
+    <%= link_to root_path do %>
+      <div class="menu-card">
+        <h3><i class="fa fa-calculator" aria-hidden="true"></i></h3>
+      </div>
+    <% end %>
+    <!-- EDIT SETTINGs -->
+    <%= link_to root_path do %>
+      <div class="menu-card">
+        <h3><i class="fa fa-cog" aria-hidden="true"></i></h3>
+      </div>
+    <% end %>
+  </div>

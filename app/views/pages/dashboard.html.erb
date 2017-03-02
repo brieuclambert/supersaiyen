@@ -1,25 +1,13 @@
-<h1>Mon compte</h1>
-<div class="container">
-  <% @clients.each do |client| %>
-  <div class="row">
-    <div class="col-md-2">
-      <%= client.nom %>
-    </div>
-    <div class="col-md-2">
-      <%= client.categorie %>
-    </div>
-    <div class="col-md-2">
-      <%= client.portable %>
-    </div>
-    <div class="col-md-2">
-      <%= link_to "Nouveau Dossier", new_client_dossier_path(client) %>
-    </div>
-    <div class="col-md-2">
-      <%= client.dossiers.length %>
+<div class="wrapper dashboard-wrapper">
+  <div class="container dashboard-container">
+    <%= render partial: 'shared/vertical_navbar' %>
+    <div class="content-right">
+        DASHBOARD & ANALYTICS & AGENDA
     </div>
   </div>
-  <% end %>
-
-<%= link_to "Nouveau Client", new_client_path %>
 </div>
+
+
+
+
 

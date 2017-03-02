@@ -1,2 +1,47 @@
-<h1>Clients#index</h1>
-<p>Find me in app/views/clients/index.html.erb</p>
+<div class="dashboard-wrapper">
+  <div class="dashboard-container">
+    <%= render partial: 'shared/vertical_navbar' %>
+    <div class="content-right">
+      <!-- Première ligne "clients" -->
+      <%= render partial: 'shared/clients_horizontal_navbar', locals: {client: nil, clients:@clients} %>
+      <%= render partial: 'shared/clients_filter_navbar' %>
+       <!-- 2e ligne "list + conten" -->
+      <div class="clients-container">
+        <div class="clients-list">
+          <div class="search-bar">
+            <input type="text" placeholder="Rechercher par nom ou n° téléphone">
+          </div>
+          <% @clients.each do |client| %>
+            <%= link_to clients_path(client_id: client.id) do %>
+            <div class="row client-small-card" id="client-<%= client.id %>">
+              <div class="col-xs-6 overflow-hidden">
+                <i class="fa fa-star color-green <% if rand(0..1) == 1 %>hidden<% else %>margin-right-5px<% end %>" aria-hidden="true"></i>
+                <%= client.nom %>
+              </div>
+              <div class="col-xs-6 overflow-hidden phone-number">
+                <%= client.portable %>
+              </div>
+            </div>
+            <% end %>
+
+          <% end %>
+        </div>
+        <div class="clients-content">
+          <% if !@client.nil? %>
+          <%= @client.nom %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  $('.navbar-fixed-top').hide();
+  $('footer').hide();
+</script>
+
+
+
+
