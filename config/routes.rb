@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   get 'pages/dashboard'
 
-  resources :clients, only: [:index, :show, :new, :create]
+  resources :clients, only: [:index, :show, :new, :create] do
+    resources :dossiers, only: [:new, :create];
+  end
+
+  resources :dossiers, only: [:index, :show]
 
   devise_for :users
   root to: 'pages#home'
