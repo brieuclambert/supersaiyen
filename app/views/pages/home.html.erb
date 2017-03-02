@@ -5,7 +5,16 @@
             <a href="index.html" class="logo-white-navbar">Legali<span class="color-green">.</span>io<!-- <img src="img/logo.svg" alt="Logo"> --></a>
           </div>
           <div class="col-xs-6 signin text-right navbar-nav">
-            <a href="#pricing" class="scroll">Notre offre</a>&nbsp; &nbsp;<a href="#" class="sign-in-btn">Mon compte</a>
+            <!-- <a href="#pricing" class="scroll">Notre offre</a>&nbsp; &nbsp;<a href="#" class="sign-in-btn">Mon compte</a> -->
+            <a href="#pricing" class="scroll">Notre offre</a>
+        <% if user_signed_in? %>
+          <%= link_to "Mon compte", pages_dashboard_path, class:"sign-in-btn" %> &nbsp;&nbsp;
+          <%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Log out") %>
+              <% end %>
+
+        <% else %>
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "sign-in-btn" %>
+        <% end %>
           </div>
         </div>
 
