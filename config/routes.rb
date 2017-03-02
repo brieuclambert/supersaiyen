@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :clients, only: [:index, :show, :new, :create] do
     resources :dossiers, only: [:new, :create];
+    resources :biens, only: [:new, :create];
   end
 
   resources :dossiers, only: [:index, :show]
