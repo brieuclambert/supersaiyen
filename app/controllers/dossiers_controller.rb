@@ -18,7 +18,7 @@ class DossiersController < ApplicationController
     @dossier = Dossier.new(dossier_params)
     @dossier.client_id = @client.id
     if @dossier.save
-      redirect_to pages_dashboard_path
+      redirect_to dashboard_path
     else
       render "new"
     end

@@ -8,7 +8,7 @@
             <!-- <a href="#pricing" class="scroll">Notre offre</a>&nbsp; &nbsp;<a href="#" class="sign-in-btn">Mon compte</a> -->
             <a href="#pricing" class="scroll">Notre offre</a>
         <% if user_signed_in? %>
-          <%= link_to "Mon compte", pages_dashboard_path, class:"sign-in-btn" %> &nbsp;&nbsp;
+          <%= link_to "Mon compte", dashboard_path, class:"sign-in-btn" %> &nbsp;&nbsp;
           <%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Log out") %>
               <% end %>
 
