@@ -9,11 +9,11 @@
             <a href="#pricing" class="scroll">Notre offre</a>
         <% if user_signed_in? %>
           <%= link_to "Mon compte", dashboard_path, class:"sign-in-btn" %> &nbsp;&nbsp;
-          <%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Log out") %>
+          <%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Quitter") %>
               <% end %>
 
         <% else %>
-          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "sign-in-btn" %>
+          <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "sign-in-btn" %>
         <% end %>
           </div>
         </div>
