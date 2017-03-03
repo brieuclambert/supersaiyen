@@ -13,11 +13,11 @@
         <li><a href="#pricing" class="scroll">Notre offre</a></li>
         <% if user_signed_in? %>
           <li><a href="#" class="sign-in-btn">Mon compte</a></li>
-          <li><%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Log out") %>
+          <li><%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Quitter") %>
               <% end %>
             </li>
         <% else %>
-          <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "sign-in-btn" %></li>
+          <li><%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "sign-in-btn" %></li>
         <% end %>
       </ul>
     </div><!--/.navbar-collapse -->
