@@ -27,6 +27,62 @@
         </div>
         <div class="clients-content">
           <% if !@client.nil? %>
+          <div class="row">
+            <div class="col-md-8">
+              <h2 class="color-dark-blue font-size-30px font-weight-300"><%= @client.prenom %><%= @client.nom %></h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-9">
+              <p class="client-info">Age : <span class="client-info-content"><%= @client.date_de_naissance %> ans</span></p>
+              <p class="client-info">Mail : <span class="client-info-content"><%= @client.mail %></span></p>
+              <p class="client-info">Téléphone : <span class="client-info-content"><%= @client.portable %></span></p>
+              <p class="client-info">Profession : <span class="client-info-content"><%= @client.profession %></span></p>
+              <p class="client-info">Adresse : <span class="client-info-content"><%= @client.adresse %></span></p>
+            </div>
+            <div class="col-md-3">
+              <%= image_tag("/../../assets/images/nationalite/#{@client.nationalite}.svg", size: "16", data: { title: '#{@client.nationalite.capitalize}'})  %>
+              <p class="client-info">Catégorie : <span class="client-info-content"><%= @client.categorie %></span></p>
+            </div>
+          </div>
+          <hr>
+
+          <div class="row">
+            <div class="col-md-9"><h2 class="color-dark-blue font-size-30px font-weight-300">Les Dossiers (<%= @client.dossiers.length %>)</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+                <p>Nom</p>
+              </div>
+              <div class="col-md-3">
+                <p>Catégorie</p>
+              </div>
+              <div class="col-md-3">
+                <p>Adversaire</p>
+              </div>
+          </div>
+          <% @client.dossiers.each do |dossier| %>
+          <div class="row">
+            <%= link_to dossier_path(dossier) do %>
+              <div class="col-md-3">
+                <p><span class="client-info-content"><%= dossier.nom %></span></p>
+              </div>
+              <div class="col-md-3">
+                <p><span class="client-info-content"><%= dossier.categorie %></span></p>
+              </div>
+              <div class="col-md-3">
+                <p><span class="client-info-content"><%= dossier.adversaire %></span></p>
+              </div>
+            <% end %>
+              <div class="col-md-1">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              </div>
+              <div class="col-md-1">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </div>
+            </div>
+            <% end %>
             <%= render partial: 'shared/client_content' %>
           <% elsif params[:new_client] == "true" %>
             <%= render partial: 'shared/new_client' %>
