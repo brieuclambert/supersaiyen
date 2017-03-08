@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-8">
+    <h2 class="color-dark-blue font-size-30px font-weight-300 upper"><%= @client.nom %></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-9">
+    <p class="client-info">Age : <span class="client-info-content"><%= @client.age %> ans</span></p>
+    <p class="client-info">Mail : <span class="client-info-content"><%= @client.mail %></span></p>
+    <p class="client-info">Téléphone : <span class="client-info-content"><%= @client.portable %></span></p>
+    <p class="client-info">Profession : <span class="client-info-content"><%= @client.profession %></span></p>
+    <p class="client-info">Adresse : <span class="client-info-content"><%= @client.adresse %></span></p>
+  </div>
+  <div class="col-md-3">
+    <p class="client-info">Nationalité : <span class="client-info-content"><%= @client.nationalité %></span></p>
+    <p class="client-info">Catégorie : <span class="client-info-content"><%= @client.categorie %></span></p>
+  </div>
+</div>
+<hr>
+
+<div class="row">
+  <div class="col-md-9"><h2 class="color-dark-blue font-size-30px font-weight-300">Les Dossiers (<%= @client.dossiers.length %>)</h2>
+  </div>
+</div>
+<% @client.dossiers.each do |dossier| %>
+<div class="row">
+  <%= link_to dossier_path(dossier) do %>
+  <div class="col-md-4">
+    <p><%= dossier.nom %></p>
+  </div>
+  <div class="col-md-4">
+    <p><%= dossier.categorie %></p>
+  </div>
+  <div class="col-md-2">
+    <p>edit</p>
+  </div>
+  <div class="col-md-2">
+    <p>supprimer</p>
+  </div>
+  <% end %>
+</div>
+<% end %>
