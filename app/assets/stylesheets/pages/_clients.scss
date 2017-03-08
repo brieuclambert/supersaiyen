@@ -18,7 +18,7 @@
   float:left;
   left: 0;
   height: 100vh;
-  overflow: scroll;
+  overflow: auto;
   padding:20px;
   height:80vh;
   border-right:1px solid #F2F2F0;
@@ -51,11 +51,5 @@
 
 }
 
-.clients-content {
-  width: 50%;
-  float: left;
-  height:80vh;
-  border-right: 1px solid #F2F2F0;
-}
 
 
