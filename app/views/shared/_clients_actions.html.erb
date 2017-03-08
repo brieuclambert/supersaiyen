@@ -7,7 +7,7 @@
     <i class="fa fa-plus" aria-hidden="true"></i>
   </div>
   <div class="text">
-    <%= link_to new_client_path, class:"" do %>
+    <%= link_to clients_path(new_client: true) do %>
       Nouveau client
     <% end %>
   </div>
@@ -19,7 +19,7 @@
     <i class="fa fa-folder" aria-hidden="true"></i>
   </div>
   <div class="text">
-    <%= link_to new_client_path, class:"" do %>
+    <%= link_to clients_path(new_dossier: true, client_id: params[:client_id]) do %>
       Nouveau dossier
     <% end %>
   </div>
@@ -31,7 +31,7 @@
     <i class="fa fa-calculator" aria-hidden="true"></i>
   </div>
   <div class="text">
-    <%= link_to new_client_path, class:"" do %>
+    <%= link_to clients_path(new_calculator: true, client_id: params[:client_id]) do %>
       Nouveau calcul
     <% end %>
   </div>

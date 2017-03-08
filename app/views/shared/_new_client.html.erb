@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-offline-4 col-md-4">
+      <h1>Ajouter un client</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offline-4 col-md-4">
+      <%= simple_form_for @new_client do |f| %>
+      <%= f.input :nom %>
+      <%= f.input :age %>
+      <%= f.input :profession %>
+      <%= f.input :adresse %>
+      <%= f.input :portable %>
+      <%= f.input :mail %>
+      <%= f.input :categorie %>
+      <%= f.input :nationalité %>
+      <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

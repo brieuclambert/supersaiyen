@@ -4,6 +4,9 @@ class ClientsController < ApplicationController
     if params[:client_id]
       @client = Client.find(params[:client_id])
     end
+    if params[:new_client] == "true"
+      @new_client = Client.new
+    end
   end
 
   def show
