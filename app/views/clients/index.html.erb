@@ -29,19 +29,19 @@
           <% if !@client.nil? %>
           <div class="row">
             <div class="col-md-8">
-              <h2 class="color-dark-blue font-size-30px font-weight-300"><%= @client.nom.upcase %></h2>
+              <h2 class="color-dark-blue font-size-30px font-weight-300"><%= @client.prenom %><%= @client.nom %></h2>
             </div>
           </div>
           <div class="row">
             <div class="col-md-9">
-              <p class="client-info">Age : <span class="client-info-content"><%= @client.age %> ans</span></p>
+              <p class="client-info">Age : <span class="client-info-content"><%= @client.date_de_naissance %> ans</span></p>
               <p class="client-info">Mail : <span class="client-info-content"><%= @client.mail %></span></p>
               <p class="client-info">Téléphone : <span class="client-info-content"><%= @client.portable %></span></p>
               <p class="client-info">Profession : <span class="client-info-content"><%= @client.profession %></span></p>
               <p class="client-info">Adresse : <span class="client-info-content"><%= @client.adresse %></span></p>
             </div>
             <div class="col-md-3">
-              <p class="client-info">Nationalité : <span class="client-info-content"><%= @client.nationalité %></span></p>
+              <%= image_tag("/../../assets/images/nationalite/#{@client.nationalite}.svg", size: "16", data: { title: '#{@client.nationalite.capitalize}'})  %>
               <p class="client-info">Catégorie : <span class="client-info-content"><%= @client.categorie %></span></p>
             </div>
           </div>
@@ -51,22 +51,36 @@
             <div class="col-md-9"><h2 class="color-dark-blue font-size-30px font-weight-300">Les Dossiers (<%= @client.dossiers.length %>)</h2>
             </div>
           </div>
+          <div class="row">
+            <div class="col-md-3">
+                <p>Nom</p>
+              </div>
+              <div class="col-md-3">
+                <p>Catégorie</p>
+              </div>
+              <div class="col-md-3">
+                <p>Adversaire</p>
+              </div>
+          </div>
           <% @client.dossiers.each do |dossier| %>
           <div class="row">
             <%= link_to dossier_path(dossier) do %>
-              <div class="col-md-4">
-                <p><%= dossier.nom %></p>
+              <div class="col-md-3">
+                <p><span class="client-info-content"><%= dossier.nom %></span></p>
               </div>
-              <div class="col-md-4">
-                <p><%= dossier.categorie %></p>
+              <div class="col-md-3">
+                <p><span class="client-info-content"><%= dossier.categorie %></span></p>
               </div>
-              <div class="col-md-2">
-                <p>edit</p>
+              <div class="col-md-3">
+                <p><span class="client-info-content"><%= dossier.adversaire %></span></p>
               </div>
-              <div class="col-md-2">
-                <p>supprimer</p>
+            <% end %>
+              <div class="col-md-1">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
               </div>
-              <% end %>
+              <div class="col-md-1">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </div>
             </div>
             <% end %>
 
