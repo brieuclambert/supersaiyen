@@ -577,6 +577,10 @@ footer {
     border-radius: 0;
 }
 
+.w-100percent {
+  width:100%;
+}
+
 
 
 
@@ -767,6 +771,99 @@ footer {
   overflow:hidden;
 }
 
+
+// MARGIN
+
 .margin-right-5px {
   margin-right:5px;
+}
+
+.no-margin {
+  margin:0
+}
+
+.mb-10px {
+  margin-bottom:10px
+}
+
+.mb-20px {
+  margin-bottom:20px
+}
+
+.mb-30px {
+  margin-bottom:30px;
+}
+
+.mr-10px {
+  margin-right:10px
+}
+
+// PADDING
+
+.pb-10px {
+  padding-bottom:10px
+}
+
+// TEXT EFFECT
+
+.txt-center {
+  text-align:center
+}
+
+.upper {
+  text-transform:uppercase;
+}
+
+
+// BORDER
+
+.bb-green {
+  border-bottom:3px solid #11BFAE;
+}
+
+// BTN
+
+.btn-medium-secondary {
+  // border-radius: 19px;
+  // border: 1px solid #11BFAE;
+  // padding: 5px 10px;
+  display:flex;
+  color:#1B3C59;
+  cursor:pointer;
+
+  .icon {
+    padding: 5px 8px 3px 12px;
+    background: #11BFAE;
+    border-radius: 19px 0 0 19px;
+    color: white;
+    border: 1px solid #11BFAE;
+    transition: 0.3s ease-in-out;
+  }
+  .text {
+    border-radius: 0 19px 19px 0;
+    padding:5px 10px 3px 10px;
+    border: 1px solid #11BFAE;
+    width:80%;
+    text-align:left;
+    transition: 0.3s ease-in-out;
+  }
+  a:hover {
+    color:white;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+.btn-medium-secondary:hover {
+  // border-radius: 19px;
+  // border: 1px solid #11BFAE;
+  // padding: 5px 10px;
+
+  .icon {
+    background: white;
+    color: #11BFAE;
+  }
+  .text {
+    background:#11BFAE;
+    color:white !important;
+  }
 }

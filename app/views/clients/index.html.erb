@@ -3,7 +3,7 @@
     <%= render partial: 'shared/vertical_navbar' %>
     <div class="content-right">
       <!-- Première ligne "clients" -->
-      <%= render partial: 'shared/clients_horizontal_navbar', locals: {client: nil, clients:@clients} %>
+      <%= render partial: 'shared/clients_horizontal_navbar', locals: {client: @client, clients:@clients} %>
       <%= render partial: 'shared/clients_filter_navbar' %>
        <!-- 2e ligne "list + conten" -->
       <div class="clients-container">
@@ -32,7 +32,7 @@
           <% end %>
         </div>
         <div class="clients-action">
-         Ajouter un dossier
+         <%= render partial: 'shared/clients_actions' %>
         </div>
       </div>
     </div>
