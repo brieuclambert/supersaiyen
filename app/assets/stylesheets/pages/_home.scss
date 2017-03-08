@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6, p, .btn, .navbar-nav a, .form-control, .list-inline, sma
 
 p, .lead {
   font-family: 'Roboto', sans-serif;
+  font-weight:300;
 }
 
 h1 {
@@ -24,7 +25,7 @@ h1 {
   line-height: 55px;
   letter-spacing: -1px;
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 h2 {
@@ -32,7 +33,7 @@ h2 {
   line-height: 40px;
   letter-spacing: -0.5px;
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 h3 {
@@ -40,21 +41,21 @@ h3 {
   line-height: 30px;
   letter-spacing: 0px;
   color: #231f20;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .lead {
   font-size: 21px;
   line-height: 26px;
   color: #ffffff;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 p {
   font-size: 17px;
   line-height: 22px;
   color: #929496;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 /*------------------Utilities---------------------*/
@@ -106,7 +107,7 @@ a:hover, a:focus {
   font-size: 13px;
   line-height: 1.33;
   padding: 22px 30px;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 1px;
 }
 
@@ -114,7 +115,7 @@ a:hover, a:focus {
   font-size: 11px;
   line-height: 1.33;
   padding: 10px 18px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .btn-wide {
@@ -122,7 +123,7 @@ a:hover, a:focus {
   font-size: 13px;
   line-height: 1.33;
   padding: 18px 28px;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 1px;
 }
 
@@ -521,7 +522,7 @@ footer {
     background: none repeat scroll 0 0 #231f20;
     color: #FFFFFF;
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 500;
     padding-bottom: 20px;
     padding-top: 20px;
 }
@@ -804,6 +805,35 @@ footer {
   padding-bottom:10px
 }
 
+.pb-20px {
+  padding-bottom:20px;
+}
+
+.pt-20px {
+  padding-top:20px
+}
+
+.pb-40px {
+  padding-bottom:40px
+}
+
+.p-20px {
+  padding:20px
+}
+
+// FLEX OPTIONS
+
+.flex-row-space-between-wrap {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.flex-45percent {
+  flex:0 0 45%
+}
+
 // TEXT EFFECT
 
 .txt-center {
@@ -818,7 +848,7 @@ footer {
 // BORDER
 
 .bb-green {
-  border-bottom:3px solid #11BFAE;
+ box-shadow:inset 0px -6px 0px rgba(17, 191, 174, 0.25)
 }
 
 // BTN
@@ -834,13 +864,13 @@ footer {
   .icon {
     padding: 5px 8px 3px 12px;
     background: #11BFAE;
-    border-radius: 19px 0 0 19px;
+    border-radius: 2px 0 0 2px;
     color: white;
     border: 1px solid #11BFAE;
     transition: 0.3s ease-in-out;
   }
   .text {
-    border-radius: 0 19px 19px 0;
+    border-radius: 0 2px 2px 0;
     padding:5px 10px 3px 10px;
     border: 1px solid #11BFAE;
     width:80%;
@@ -866,4 +896,8 @@ footer {
     background:#11BFAE;
     color:white !important;
   }
+}
+
+.margin-auto {
+  margin:auto;
 }

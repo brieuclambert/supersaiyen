@@ -14,11 +14,11 @@
           <% @clients.each do |client| %>
             <%= link_to clients_path(client_id: client.id) do %>
             <div class="row client-small-card" id="client-<%= client.id %>">
-              <div class="col-xs-6 overflow-hidden">
+              <div class="col-xs-8 overflow-hidden">
                 <i class="fa fa-star color-green <% if rand(0..1) == 1 %>hidden<% else %>margin-right-5px<% end %>" aria-hidden="true"></i>
                 <%= client.nom %>
               </div>
-              <div class="col-xs-6 overflow-hidden phone-number">
+              <div class="col-xs-4 overflow-hidden phone-number">
                 <%= client.portable %>
               </div>
             </div>
@@ -83,7 +83,9 @@
               </div>
             </div>
             <% end %>
-
+            <%= render partial: 'shared/client_content' %>
+          <% elsif params[:new_client] == "true" %>
+            <%= render partial: 'shared/new_client' %>
           <% end %>
         </div>
         <div class="clients-action">
@@ -95,10 +97,18 @@
 </div>
 
 
-<script>
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
   $('.navbar-fixed-top').hide();
   $('footer').css("display", "none");
-</script>
+  $('.categorie-design span.radio input').change(function(){
+    $('.categorie-design span').removeClass("checked");
+    console.log($(this).parent().parent());
+    $(this).parent().parent().addClass('checked');
+  });
+
+  <% end %>
+<% end %>
 
 
 
