@@ -1,0 +1,38 @@
+<div class="w-100percent mb-30px txt-center">
+  <h4 class="no-margin color-dark-blue upper"><span class="bb-green">Action</span></h4>
+</div>
+
+<div class="w-100percent client-action txt-center mb-30px btn-medium-secondary">
+  <div class="icon">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+  </div>
+  <div class="text">
+    <%= link_to new_client_path, class:"" do %>
+      Nouveau client
+    <% end %>
+  </div>
+</div>
+
+<% if params[:client_id] %>
+<div class="w-100percent client-action txt-center mb-30px btn-medium-secondary">
+  <div class="icon">
+    <i class="fa fa-folder" aria-hidden="true"></i>
+  </div>
+  <div class="text">
+    <%= link_to new_client_path, class:"" do %>
+      Nouveau dossier
+    <% end %>
+  </div>
+</div>
+<% end %>
+
+<div class="w-100percent client-action txt-center mb-30px btn-medium-secondary">
+  <div class="icon">
+    <i class="fa fa-calculator" aria-hidden="true"></i>
+  </div>
+  <div class="text">
+    <%= link_to new_client_path, class:"" do %>
+      Nouveau calcul
+    <% end %>
+  </div>
+</div>
