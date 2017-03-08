@@ -15,10 +15,12 @@
 .clients-list {
   width: 300px;
   top: 0;
+  float:left;
   left: 0;
   height: 100vh;
   overflow: scroll;
   padding:20px;
+  height:80vh;
   border-right:1px solid #F2F2F0;
   .search-bar input {
     width: 100%;
@@ -47,6 +49,13 @@
     }
   }
 
+}
+
+.clients-content {
+  width: 50%;
+  float: left;
+  height:80vh;
+  border-right: 1px solid #F2F2F0;
 }
 
 
