@@ -1,48 +1,71 @@
-  <h4 class="no-margin color-dark-blue upper txt-center pt-20px pb-20px"><span class="bb-green">Nouveau client</span></h4>
+  <h4 class="no-margin color-dark-blue upper txt-center pt-20px"><span class="bb-green">Nouveau client</span></h4>
   <div class="row">
     <%= simple_form_for @new_client do |f| %>
-      <div class="p-20px flex-row-space-between-wrap">
-        <div class="input-blue flex-45percent">
-          <div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
-          <div class="text"><%= f.input :nom, label:false, placeholder:"Nom" %></div>
-        </div>
-        <div class="input-blue flex-45percent">
-          <div class="icon"><i class="fa fa-birthday-cake" aria-hidden="true"></i></div>
-          <div class="text"><%= f.input :age, label:false, placeholder:"Date de naissance" %></div>
-        </div>
-        <div class="input-blue flex-45percent">
-          <div class="icon"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
-          <div class="text"><%= f.input :profession, label:false, placeholder:"Profession" %></div>
-        </div>
-        <div class="input-blue flex-45percent">
-          <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-          <div class="text"><%= f.input :adresse, label:false, placeholder:"Adresse" %></div>
-        </div>
-        <div class="input-blue flex-45percent">
-          <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-          <div class="text"><%= f.input :portable, label:false, placeholder:"Numéro de téléphone" %></div>
-        </div>
-        <div class="input-blue flex-45percent">
-          <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-          <div class="text"><%= f.input :mail, label:false, placeholder:"Email" %></div>
-        </div>
-        <div class="flex-45percent categorie-design">
-          <h5 class="no-margin color-dark-blue txt-center mb-20px"><span class="bb-green">Catégorie</span></h5>
-          <%= f.input :categorie, as: :radio_buttons, collection: Client::CATEG, checked: Client::CATEG[0], label:false %>
-        </div>
-        <div class="flex-45percent">
-          <div>
-          <h5 class="no-margin color-dark-blue txt-center mb-20px"><span class="bb-green">Nationalité</span></h5>
-          </div>
-          <div class="input-blue">
-            <div class="icon"><i class="fa fa-flag" aria-hidden="true"></i></div>
-            <div class="text"><%= f.input :nationalité, label:false, collection: Client::NATIONS, selected:'france'%></div>
-          </div>
-        </div>
-        <div class="margin-auto">
-          <%= f.submit "Je créé mon client", class:"btn btn-default btn-submit-blue" %>
+    <div class="p-20px flex-row-space-between-wrap">
+
+      <div class="flex-100percent">
+        <div>
+          <h5 class="no-margin color-dark-blue txt-center mb-20px"><span class="bb-green">Identité</span></h5>
         </div>
       </div>
-      <% end %>
+
+      <div class="input-blue flex-45percent">
+        <div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+        <div class="text"><%= f.input :prenom, label:false, placeholder:"Prénom" %></div>
+      </div>
+
+      <div class="input-blue flex-45percent">
+        <div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+        <div class="text"><%= f.input :nom, label:false, placeholder:"Nom" %></div>
+      </div>
+
+      <div class="input-blue flex-45percent">
+        <div class="icon"><i class="fa fa-birthday-cake" aria-hidden="true"></i></div>
+        <div class="text"><%= f.input :date_de_naissance, label:false, as: :date, start_year: Date.today.year - 100, end_year: Date.today.year, order: [:day, :month, :year]%>
+        </div>
+      </div>
+
+
+      <div class="input-blue flex-45percent">
+        <div class="icon"><i class="fa fa-flag" aria-hidden="true"></i></div>
+        <div class="text"><%= f.input :nationalite, label:false, collection: Client::NATIONS, selected:'france'%></div>
+      </div>
+
+      <div class="flex-100percent">
+        <div>
+          <h5 class="no-margin color-dark-blue txt-center mb-20px"><span class="bb-green">Informations</span></h5>
+        </div>
+      </div>
+
+      <div class="input-blue flex-45percent">
+        <div class="icon"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
+        <div class="text"><%= f.input :profession, label:false, placeholder:"Profession" %></div>
+      </div>
+
+      <div class="input-blue flex-45percent">
+        <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+        <div class="text"><%= f.input :adresse, label:false, placeholder:"Adresse" %></div>
+      </div>
+
+      <div class="input-blue flex-45percent">
+        <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+        <div class="text"><%= f.input :portable, label:false, placeholder:"Numéro de téléphone" %></div>
+      </div>
+
+      <div class="input-blue flex-45percent">
+        <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+        <div class="text"><%= f.input :mail, label:false, placeholder:"Email" %></div>
+      </div>
+
+      <div class="flex-45percent categorie-design">
+        <h5 class="no-margin color-dark-blue txt-center mb-20px"><span class="bb-green">Catégorie</span></h5>
+        <%= f.input :categorie, as: :radio_buttons, collection: Client::CATEG, label:false %>
+      </div>
+
+      <div class="flex-45percent btn-submit-blue-vertical-align">
+        <%= f.submit "Je créé mon client", class:"btn btn-default btn-submit-blue " %>
+      </div>
     </div>
+    <% end %>
   </div>
+</div>
