@@ -16,7 +16,7 @@
             <div class="row client-small-card" id="client-<%= client.id %>">
               <div class="col-xs-8 overflow-hidden">
                 <i class="fa fa-star color-green <% if rand(0..1) == 1 %>hidden<% else %>margin-right-5px<% end %>" aria-hidden="true"></i>
-                <%= client.nom %>
+                <%= client.prenom %> <span class="upper"><%= client.nom %></span>
               </div>
               <div class="col-xs-4 overflow-hidden phone-number">
                 <%= client.portable %>
@@ -27,7 +27,6 @@
         </div>
         <div class="clients-content">
           <% if !@client.nil? %>
-
             <%= render partial: 'shared/client_content' %>
           <% elsif params[:new_client] == "true" %>
             <%= render partial: 'shared/new_client' %>
@@ -44,6 +43,9 @@
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
+  $('#dashboard-path-btn').removeClass("active");
+  $('#clients-path-btn').addClass("active");
+
   $('.navbar-fixed-top').hide();
   $('footer').css("display", "none");
   $('.categorie-design span.radio input').change(function(){
