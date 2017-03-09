@@ -8,15 +8,19 @@
     <div class="col-md-offline-4 col-md-4">
       <%= simple_form_for @client do |f| %>
       <%= f.input :nom %>
-      <%= f.input :age %>
+      <%= f.input :prenom %>
+      <%= f.input :date_de_naissance %>
       <%= f.input :profession %>
       <%= f.input :adresse %>
       <%= f.input :portable %>
       <%= f.input :mail %>
       <%= f.input :categorie %>
-      <%= f.input :nationalité %>
+      <%= f.input :nationalite %>
       <%= f.button :submit %>
       <% end %>
     </div>
   </div>
 </div>
+
+
+
