@@ -20,7 +20,7 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(client_params)
     if @client.save
-      redirect_to dashboard_path
+      redirect_to clients_path(client_id: @client.id)
     else
       render "new"
     end
@@ -29,6 +29,6 @@ class ClientsController < ApplicationController
 private
 
   def client_params
-    params.require(:client).permit(:nom, :age, :nationalité, :adresse, :portable, :mail, :categorie, :profession)
+    params.require(:client).permit(:nom, :nationalite, :adresse, :portable, :mail, :categorie, :profession, :prenom, :date_de_naissance, :genre)
   end
 end

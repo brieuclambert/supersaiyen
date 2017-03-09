@@ -8,8 +8,9 @@
   }
   .clients-filter.active, :hover {
     font-weight:700;
-    border-bottom:3px solid #11BFAE;
+    // border-bottom:3px solid #11BFAE;
     transition:none !important;
+    box-shadow:inset 0px -6px 0px rgba(17, 191, 174, 0.25);
   }
 }
 .clients-list {
