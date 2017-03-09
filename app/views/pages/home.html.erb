@@ -5,16 +5,18 @@
             <a href="index.html" class="logo-white-navbar">Legali<span class="color-green">.</span>io<!-- <img src="img/logo.svg" alt="Logo"> --></a>
           </div>
           <div class="col-xs-6 signin text-right navbar-nav">
-            <!-- <a href="#pricing" class="scroll">Notre offre</a>&nbsp; &nbsp;<a href="#" class="sign-in-btn">Mon compte</a> -->
-            <a href="#pricing" class="scroll">Notre offre</a>
+           <ul class="nav navbar-nav navbar-right">
+        <li><a href="#pricing" class="scroll">Notre offre</a></li>
         <% if user_signed_in? %>
-          <%= link_to "Mon compte", dashboard_path, class:"sign-in-btn" %> &nbsp;&nbsp;
-          <%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Quitter") %>
+          <li><a href="#" class="sign-in-btn">Mon compte</a></li>
+          <li><%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Quitter") %>
               <% end %>
-
+            </li>
         <% else %>
-          <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "sign-in-btn" %>
+          <li><a  class="sign-in-btn" data-toggle="modal" data-target="#sign-in-modal">Se connecter</a></li>
+          <li><a  class="sign-in-btn" data-toggle="modal" data-target="#sign-up-modal">S'inscrire</a></li>
         <% end %>
+      </ul>
           </div>
         </div>
 
