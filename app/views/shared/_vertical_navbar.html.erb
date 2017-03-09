@@ -14,6 +14,13 @@
     <!-- SEPARATOR -->
     <div class="green-separator">
     </div>
+    <!-- DASHBOARD LINK -->
+    <%= link_to dashboard_path do %>
+      <div class="menu-card active">
+        <h3><i class="fa fa-tachometer" aria-hidden="true"></i></h3>
+      </div>
+    <% end %>
+
     <!-- EDIT CLIENTS -->
     <%= link_to clients_path do %>
       <div class="menu-card active">

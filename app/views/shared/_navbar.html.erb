@@ -12,14 +12,49 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#pricing" class="scroll">Notre offre</a></li>
         <% if user_signed_in? %>
-          <li><a href="#" class="sign-in-btn">Mon compte</a></li>
-          <li><%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Quitter") %>
-              <% end %>
-            </li>
+        <li><a href="#" class="sign-in-btn">Mon compte</a></li>
+        <li><%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Quitter") %>
+          <% end %>
+        </li>
         <% else %>
-          <li><%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "sign-in-btn" %></li>
+        <li><a  class="sign-in-btn" data-toggle="modal" data-target="#sign-in-modal">Se connecter</a></li>
+        <li><a  class="sign-in-btn" data-toggle="modal" data-target="#sign-up-modal">S'inscrire</a></li>
         <% end %>
       </ul>
     </div><!--/.navbar-collapse -->
   </div>
 </div>
+
+<%= render partial: 'devise/sessions/new_session' %>
+
+<div class="modal fade bs-example-modal-sm" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
