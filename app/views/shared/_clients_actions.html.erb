@@ -7,7 +7,7 @@
     <i class="fa fa-plus" aria-hidden="true"></i>
   </div>
   <div class="text">
-    <%= link_to clients_path(new_client: true, lid: params[:client_id]) do %>
+    <%= link_to clients_path(new_client: true, lid: params[:client_id] || @dossier.client.id ) do %>
       Nouveau client
     <% end %>
   </div>
@@ -36,7 +36,30 @@
     <% end %>
   </div>
 </div>
+<% elsif @dossier %>
+<div class="w-100percent client-action txt-center mb-30px btn-medium-secondary">
+  <div class="icon">
+    <i class="fa fa-pencil" aria-hidden="true"></i>
+  </div>
+  <div class="text">
+    <%= link_to clients_path(edit_client: true, client_id: @dossier.client.id) do %>
+      Modifier le client
+    <% end %>
+  </div>
+</div>
+
+<div class="w-100percent client-action txt-center mb-30px btn-medium-secondary">
+  <div class="icon">
+    <i class="fa fa-folder" aria-hidden="true"></i>
+  </div>
+  <div class="text">
+    <%= link_to clients_path(new_dossier: true, client_id: @dossier.client.id) do %>
+      Nouveau dossier
+    <% end %>
+  </div>
+</div>
 <% end %>
+
 
 <div class="w-100percent client-action txt-center mb-30px btn-medium-secondary">
   <div class="icon">

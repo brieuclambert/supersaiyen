@@ -5,7 +5,7 @@ class DossiersController < ApplicationController
   end
 
   def show
-    @dossier = Dossier.find(params[:id])
+    @dossier = Dossier.find(params[:dossier_id])
   end
 
   def new

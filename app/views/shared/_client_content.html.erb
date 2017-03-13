@@ -33,7 +33,7 @@
 </div>
 <% @client.dossiers.each do |dossier| %>
 <div class="row">
-  <%= link_to dossier_path(dossier) do %>
+  <%= link_to clients_path(show_dossier: true, dossier_id: dossier.id) do %>
   <div class="col-md-3">
     <p><span class="client-info-content"><%= dossier.nom %></span></p>
   </div>
