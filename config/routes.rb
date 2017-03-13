@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     resources :biens, only: [:new, :create];
   end
 
-  resources :dossiers, only: [:index, :show]
+  resources :clients, only: [:edit, :update]
+  resources :dossiers, only: [:index, :show, :update, :edit]
 
   devise_for :users
   root to: 'pages#home'

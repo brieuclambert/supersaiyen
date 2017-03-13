@@ -13,7 +13,19 @@
   </div>
 </div>
 
+
 <% if params[:client_id] %>
+<div class="w-100percent client-action txt-center mb-30px btn-medium-secondary">
+  <div class="icon">
+    <i class="fa fa-pencil" aria-hidden="true"></i>
+  </div>
+  <div class="text">
+    <%= link_to clients_path(edit_client: true, client_id: params[:client_id]) do %>
+      Modifier le client
+    <% end %>
+  </div>
+</div>
+
 <div class="w-100percent client-action txt-center mb-30px btn-medium-secondary">
   <div class="icon">
     <i class="fa fa-folder" aria-hidden="true"></i>

@@ -18,9 +18,18 @@ class DossiersController < ApplicationController
     @dossier = Dossier.new(dossier_params)
     @dossier.client_id = @client.id
     if @dossier.save
-      redirect_to dashboard_path
+      redirect_to clients_path(client_id: @client.id)
     else
-      render "new"
+      flash[:notice] = "Erreur "
+    end
+  end
+
+  def update
+    @dossier = Dossier.find(params[:id])
+    if @dossier.update_attributes(dossier_params)
+      redirect_to clients_path(client_id: @dossier.client.id)
+    else
+      render "edit"
     end
   end
 
