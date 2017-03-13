@@ -1,5 +1,5 @@
 <div class="p-20px txt-center">
-  <h4 class="no-margin color-dark-blue"><span class="bb-green"><%= @client.prenom %> <span class="upper"><%= @client.nom %></span></span></h4>
+  <h4 class="no-margin color-dark-blue"><span class="bb-green"><%= @client.prenom %> <span class="upper"><%= @client.nom %></span></span>    <img src="<%= image_path "nationalite/#{@client.nationalite}.svg" %>" style="height:16px" data-title="<%= @client.nationalite.capitalize %>"></h4>
 </div>
 <div class="row">
   <div class="col-md-9">
@@ -10,7 +10,7 @@
     <p class="client-info">Adresse : <span class="client-info-content"><%= @client.adresse %></span></p>
   </div>
   <div class="col-md-3 txt-center">
-    <img src="<%= image_path "nationalite/#{@client.nationalite}.svg" %>" style="height:16px" data-title="<%= @client.nationalite.capitalize %>">
+
     <p class="client-info">Catégorie : <br><span class="client-info-content"><%= @client.categorie %></span></p>
   </div>
 </div>
@@ -24,10 +24,10 @@
   <div class="col-md-3">
     <p>Nom</p>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-4">
     <p>Catégorie</p>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-4">
     <p>Adversaire</p>
   </div>
 </div>
@@ -37,18 +37,22 @@
   <div class="col-md-3">
     <p><span class="client-info-content"><%= dossier.nom %></span></p>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-4">
     <p><span class="client-info-content"><%= dossier.categorie %></span></p>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-4">
     <p><span class="client-info-content"><%= dossier.adversaire %></span></p>
   </div>
   <% end %>
   <div class="col-md-1">
-    <i class="fa fa-pencil" aria-hidden="true"></i>
+    <%= link_to clients_path(edit_dossier: true, dossier_id: dossier.id) do %>
+    <div class="icon-blue">
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    </div>
+    <% end %>
   </div>
-  <div class="col-md-1">
+  <!-- <div class="col-md-1">
     <i class="fa fa-trash" aria-hidden="true"></i>
-  </div>
+  </div> -->
 </div>
 <% end %>

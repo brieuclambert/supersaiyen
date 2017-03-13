@@ -26,10 +26,16 @@
           <% end %>
         </div>
         <div class="clients-content">
-          <% if !@client.nil? %>
+          <% if !@client.nil? && params[:edit_client] != "true" && params[:new_dossier] != "true" && params[:edit_dossier] != "true" %>
             <%= render partial: 'shared/client_content' %>
           <% elsif params[:new_client] == "true" %>
             <%= render partial: 'shared/new_client' %>
+          <% elsif params[:edit_client] == "true" %>
+            <%= render partial: 'shared/edit_client' %>
+          <% elsif params[:new_dossier] == "true" %>
+            <%= render partial: 'shared/new_dossier' %>
+          <% elsif params[:edit_dossier] == "true" %>
+            <%= render partial: 'shared/edit_dossier' %>
           <% end %>
         </div>
         <div class="clients-action">

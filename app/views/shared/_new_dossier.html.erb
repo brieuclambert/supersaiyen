@@ -1,0 +1,42 @@
+  <%= link_to clients_path(client_id: @client.id) do %><div class="icon-back"><i class="fa fa-arrow-left" aria-hidden="true"></div></i><% end %>
+  <h4 class="no-margin color-dark-blue upper txt-center "><span class="bb-green">Nouveau dossier</span></h4>
+  <div class="row">
+    <%= simple_form_for [@client, @new_dossier] do |f| %>
+    <div class="p-20px flex-row-space-between-wrap">
+
+      <div class="flex-100percent">
+        <div>
+          <h5 class="no-margin color-dark-blue txt-center mb-20px"><span class="bb-green">Informations</span></h5>
+        </div>
+      </div>
+
+      <div class="input-blue flex-45percent">
+        <div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+        <div class="text"><%= f.input :nom, label:false, placeholder:"Nom" %></div>
+      </div>
+
+      <div class="input-blue flex-45percent">
+        <div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+        <div class="text"><%= f.input :adversaire, label:false, placeholder:"Adversaire" %></div>
+      </div>
+
+      <div class="input-blue flex-45percent">
+        <div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+        <div class="text"><%= f.input :juridiction, label:false, placeholder:"Juridiction" %></div>
+      </div>
+
+      <div class="input-blue flex-45percent">
+        <div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+        <div class="text"><%= f.input :categorie, label:false, placeholder:"Catégorie" %></div>
+      </div>
+
+      <div class="flex-100percent">
+        <div>
+          <h5 class="no-margin color-dark-blue txt-center mb-20px"><%= f.submit "Je crée le dossier", class:"btn btn-default btn-submit-blue " %></h5>
+        </div>
+      </div>
+
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -1,7 +1,7 @@
-  <%= link_to clients_path do %><div class="icon-back"><i class="fa fa-arrow-left" aria-hidden="true"></div></i><% end %>
-  <h4 class="no-margin color-dark-blue upper txt-center"><span class="bb-green">Nouveau client</span></h4>
+  <%= link_to clients_path(client_id: @client.id) do %><div class="icon-back"><i class="fa fa-arrow-left" aria-hidden="true"></div></i><% end %>
+  <h4 class="no-margin color-dark-blue upper txt-center"><span class="bb-green">Modifier le client</span></h4>
   <div class="row">
-    <%= simple_form_for @new_client do |f| %>
+    <%= simple_form_for @edit_client do |f| %>
     <div class="p-20px flex-row-space-between-wrap">
 
       <div class="flex-100percent">
@@ -12,24 +12,24 @@
 
       <div class="input-blue flex-45percent">
         <div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
-        <div class="text"><%= f.input :prenom, label:false, placeholder:"Prénom" %></div>
+        <div class="text"><%= f.input :prenom, label:false, input_html: { value: @edit_client.prenom } %></div>
       </div>
 
       <div class="input-blue flex-45percent">
         <div class="icon"><i class="fa fa-user" aria-hidden="true"></i></div>
-        <div class="text"><%= f.input :nom, label:false, placeholder:"Nom" %></div>
+        <div class="text"><%= f.input :nom, label:false, input_html: { value: @edit_client.nom } %></div>
       </div>
 
       <div class="input-blue flex-45percent">
         <div class="icon"><i class="fa fa-birthday-cake" aria-hidden="true"></i></div>
-        <div class="text"><%= f.input :date_de_naissance, label:false, as: :date, start_year: Date.today.year - 100, end_year: Date.today.year, order: [:day, :month, :year]%>
+        <div class="text"><%= f.input :date_de_naissance, label:false, as: :date, start_year: Date.today.year - 100, end_year: Date.today.year, order: [:day, :month, :year], input_html: { value: @edit_client.date_de_naissance }%>
         </div>
       </div>
 
 
       <div class="input-blue flex-45percent">
         <div class="icon"><i class="fa fa-flag" aria-hidden="true"></i></div>
-        <div class="text"><%= f.input :nationalite, label:false, collection: Client::NATIONS, selected:'france'%></div>
+        <div class="text"><%= f.input :nationalite, label:false, collection: Client::NATIONS, selected: @edit_client.nationalite %></div>
       </div>
 
       <div class="flex-100percent">
@@ -40,31 +40,31 @@
 
       <div class="input-blue flex-45percent">
         <div class="icon"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
-        <div class="text"><%= f.input :profession, label:false, placeholder:"Profession" %></div>
+        <div class="text"><%= f.input :profession, label:false, input_html: { value: @edit_client.profession } %></div>
       </div>
 
       <div class="input-blue flex-45percent">
         <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-        <div class="text"><%= f.input :adresse, label:false, placeholder:"Adresse" %></div>
+        <div class="text"><%= f.input :adresse, label:false, input_html: { value: @edit_client.adresse } %></div>
       </div>
 
       <div class="input-blue flex-45percent">
         <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-        <div class="text"><%= f.input :portable, label:false, placeholder:"Numéro de téléphone" %></div>
+        <div class="text"><%= f.input :portable, label:false, input_html: { value: @edit_client.portable } %></div>
       </div>
 
       <div class="input-blue flex-45percent">
         <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-        <div class="text"><%= f.input :mail, label:false, placeholder:"Email", pattern: "^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$", title: "Ton email n'est pas au bon format" %></div>
+        <div class="text"><%= f.input :mail, label:false, input_html: { value: @edit_client.mail } %></div>
       </div>
 
       <div class="flex-45percent categorie-design">
         <h5 class="no-margin color-dark-blue txt-center mb-20px"><span class="bb-green">Catégorie</span></h5>
-        <%= f.input :categorie, as: :radio_buttons, collection: Client::CATEG, label:false %>
+        <%= f.input :categorie, as: :radio_buttons, collection: Client::CATEG, label:false, selected: @edit_client.categorie %>
       </div>
 
       <div class="flex-45percent btn-submit-blue-vertical-align">
-        <%= f.submit "Je créé mon client", class:"btn btn-default btn-submit-blue " %>
+        <%= f.submit "Je mets à jour mon client", class:"btn btn-default btn-submit-blue " %>
       </div>
     </div>
     <% end %>
