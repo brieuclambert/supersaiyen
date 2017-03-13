@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get '/dashboard' => 'pages#dashboard'
 
-  resources :clients, only: [:index, :show, :new, :create] do
+  resources :clients, only: [:index, :show, :create] do
     resources :dossiers, only: [:new, :create];
     resources :biens, only: [:new, :create];
   end
