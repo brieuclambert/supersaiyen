@@ -68,11 +68,12 @@
 
       <div class="flex-45percent categorie-design">
         <h5 class="no-margin color-dark-blue txt-center mb-20px"><span class="bb-green">Catégorie</span></h5>
-        <%= f.input :categorie, as: :radio_buttons, collection: Client::CATEG, label:false %>
+        <%= f.input :categorie, as: :radio_buttons, collection: Client::CATEG, label:false, checked: Client::CATEG[0] %>
       </div>
 
       <div class="flex-45percent btn-submit-blue-vertical-align">
         <%= f.submit "Je créé mon client", class:"btn btn-default btn-submit-blue " %>
+        <h4 id="message-error"></h4>
       </div>
     </div>
     <% end %>

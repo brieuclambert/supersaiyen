@@ -119,11 +119,19 @@
     margin-bottom: auto;
 }
 
+#message-error {
+  font-size: 10px;
+  color: #E91E63;
+  font-weight: 100;
+  font-family: 'Roboto', sans-serif;
+}
 
 
 
 
-
+input.form-error {
+  color:#E91E63 !important;
+}
 
 
 
