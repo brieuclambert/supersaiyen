@@ -1,4 +1,12 @@
-  <%= link_to clients_path do %><div class="icon-back"><i class="fa fa-arrow-left" aria-hidden="true"></div></i><% end %>
+  <% if params[:lid] != nil %>
+    <%= link_to clients_path(client_id: params[:lid]) do %>
+    <div class="icon-back"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+    <% end %>
+  <% else %>
+    <%= link_to clients_path do %>
+    <div class="icon-back"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+    <% end %>
+  <% end %>
   <h4 class="no-margin color-dark-blue upper txt-center"><span class="bb-green">Nouveau client</span></h4>
   <div class="row">
     <%= simple_form_for @new_client do |f| %>

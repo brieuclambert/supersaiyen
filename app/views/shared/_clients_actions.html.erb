@@ -7,7 +7,7 @@
     <i class="fa fa-plus" aria-hidden="true"></i>
   </div>
   <div class="text">
-    <%= link_to clients_path(new_client: true) do %>
+    <%= link_to clients_path(new_client: true, lid: params[:client_id]) do %>
       Nouveau client
     <% end %>
   </div>

@@ -1,4 +1,4 @@
-  <%= link_to clients_path(client_id: @client.id) do %><div class="icon-back"><i class="fa fa-arrow-left" aria-hidden="true"></div></i><% end %>
+  <%= link_to clients_path(client_id: @edit_dossier.client_id) do %><div class="icon-back"><i class="fa fa-arrow-left" aria-hidden="true"></div></i><% end %>
   <h4 class="no-margin color-dark-blue upper txt-center"><span class="bb-green">Modifier le dossier</span></h4>
   <div class="row">
     <%= simple_form_for [@client, @edit_dossier] do |f| %>
