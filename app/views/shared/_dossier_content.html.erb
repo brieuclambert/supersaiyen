@@ -1,0 +1,16 @@
+<%= link_to clients_path(client_id: @dossier.client.id) do %><div class="icon-back"><i class="fa fa-arrow-left" aria-hidden="true"></div></i><% end %>
+<div class=" txt-center">
+  <h4 class="no-margin color-dark-blue"><span class="bb-green"><%= @dossier.nom %></span> </h4>
+</div>
+<div class="row">
+  <div class="col-md-9">
+    <p class="client-info">Client : <span class="client-info-content"><%= @dossier.client.prenom %> <%= @dossier.client.nom %></span> </p>
+    <p class="client-info">Adversaire : <span class="client-info-content"><%= @dossier.adversaire %></span> </p>
+    <p class="client-info">Juridiction : <span class="client-info-content"><%= @dossier.juridiction %></span> </p>
+    <p class="client-info">Catégorie : <span class="client-info-content"><%= @dossier.categorie %></span> </p>
+  </div>
+  </div>
+<hr>
+
+
+

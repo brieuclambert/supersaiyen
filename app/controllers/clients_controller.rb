@@ -17,6 +17,9 @@ class ClientsController < ApplicationController
     if params[:edit_dossier] == "true"
       @edit_dossier = Dossier.find(params[:dossier_id])
     end
+    if params[:show_dossier] == "true"
+      @dossier = Dossier.find(params[:dossier_id])
+    end
   end
 
   def show
