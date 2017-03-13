@@ -27,7 +27,7 @@ class DossiersController < ApplicationController
   def update
     @dossier = Dossier.find(params[:id])
     if @dossier.update_attributes(dossier_params)
-      redirect_to clients_path(client_id: @dossier.client.id)
+      redirect_to clients_path(dossier_id: @dossier.id, show_dossier: true)
     else
       render "edit"
     end
@@ -35,6 +35,6 @@ class DossiersController < ApplicationController
 
 private
   def dossier_params
-    params.require(:dossier).permit(:nom, :juridiction, :categorie, :adversaire)
+    params.require(:dossier).permit(:nom, :juridiction, :categorie, :adversaire, :salaire_client, :salaire_adversaire, :nb_enfant_a_charge)
   end
 end
