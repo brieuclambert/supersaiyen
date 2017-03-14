@@ -1,16 +1,40 @@
-<%= link_to clients_path(client_id: @dossier.client.id) do %><div class="icon-back"><i class="fa fa-arrow-left" aria-hidden="true"></div></i><% end %>
+<%= link_to clients_path(client_id: @dossier.client.id) do %>
+<div class="icon-back"><i class="fa fa-arrow-left" aria-hidden="true"></div></i>
+<% end %>
 <div class=" txt-center">
   <h4 class="no-margin color-dark-blue"><span class="bb-green"><%= @dossier.nom %></span> </h4>
 </div>
 <div class="row">
-  <div class="col-md-9">
+  <div class="col-xs-6">
     <p class="client-info">Client : <span class="client-info-content"><%= @dossier.client.prenom %> <%= @dossier.client.nom %></span> </p>
     <p class="client-info">Adversaire : <span class="client-info-content"><%= @dossier.adversaire %></span> </p>
     <p class="client-info">Juridiction : <span class="client-info-content"><%= @dossier.juridiction %></span> </p>
     <p class="client-info">Catégorie : <span class="client-info-content"><%= @dossier.categorie %></span> </p>
   </div>
+  <div class="col-xs-6">
+    <p class="client-info">Salaire conjoint : <span class="client-info-content"><%= @dossier.salaire_adversaire %></span> </p>
+    <p class="client-info">Salaire client : <span class="client-info-content"><%= @dossier.salaire_client %></span> </p>
+    <p class="client-info">Nombre d'enfant à charge : <span class="client-info-content"><%= @dossier.nb_enfant_a_charge %></span> </p>
   </div>
+</div>
 <hr>
+<div class="row">
+  <% if @dossier.salaire_adversaire.nil? || @dossier.salaire_client.nil? || @dossier.nb_enfant_a_charge.nil? %>
+  <h5>Editez le dossier Divorce</h5>
+    <%= simple_form_for @dossier do |f| %>
+      <%= f.input :salaire_adversaire, label:false, placeholder:"Salaire du conjoint" %>
+      <%= f.input :salaire_client, label:false, placeholder:"Salaire du client" %>
+      <%= f.input :nb_enfant_a_charge, label:false, placeholder:"Nombre d'enfants à charge" %>
+      <%= f.submit "J'enregistre", class:"btn btn-default btn-submit-blue " %>
+    <% end %>
+  <% elsif !@dossier.nb_enfant_a_charge.nil? && @dossier.nb_enfant_a_charge != 0 %>
+    <%= simple_form_for @dossier do |f| %>
+      <%= f.input :type_garde, label:false, placeholder:"Type de Garde" %>
+      Rajouter qui est le parent débiteur<br>
+      <%= f.submit "J'enregistre", class:"btn btn-default btn-submit-blue " %>
+    <% end %>
+  <% end %>
+</div>
 
 
 

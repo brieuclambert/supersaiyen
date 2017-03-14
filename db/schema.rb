@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170308164818) do
+ActiveRecord::Schema.define(version: 20170313175631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,8 +49,13 @@ ActiveRecord::Schema.define(version: 20170308164818) do
     t.string   "nom"
     t.string   "adversaire"
     t.string   "juridiction"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "salaire_adversaire"
+    t.integer  "salaire_client"
+    t.boolean  "client_debiteur"
+    t.integer  "nb_enfant_a_charge"
+    t.string   "type_garde"
     t.index ["client_id"], name: "index_dossiers_on_client_id", using: :btree
   end
 
