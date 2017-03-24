@@ -2,22 +2,21 @@
   <div class="container dashboard-container">
     <%= render partial: 'shared/vertical_navbar' %>
     <div class="content-right">
-
-      <div style="padding-left: 100px; margin-top: 100px;">
-        <h1 style="color: #314F69; ">Bientôt une dashboard de l'espace</h1>
+        <div style="padding-left: 100px; margin-top: 100px;">
+        <h1 style="color: #314F69; ">Bientôt une page de calculs de l'espace</h1>
         <h2 style="color: #314F69; "> Sinon l'onglet clients est disponible</h2>
         </div>
-        <h3>En attendant, des doggo</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/59Zcx9YbZxI" frameborder="0" allowfullscreen></iframe>
+        <h3>En attendant, des chats</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/79EvGkXHF9I" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </div>
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
-  $('#calculator-path-btn').removeClass("active");
+  $('#dashboard-path-btn').removeClass("active");
   $('#clients-path-btn').removeClass("active");
-  $('#dashboard-path-btn').addClass("active");
+  $('#calculator-path-btn').addClass("active");
 
   <% end %>
 <% end %>
