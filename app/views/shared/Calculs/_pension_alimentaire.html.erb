@@ -1,0 +1,39 @@
+<% if @dossier.regime.nil? || @dossier.revenu_parent_debiteur.nil? || @dossier.nb_enfant_a_charge.nil? %>
+    <%= simple_form_for @dossier do |f| %>
+    <div class="p-20px flex-row-space-between-wrap">
+
+      <div class="flex-100percent categorie-design">
+        <h5 class="no-margin color-dark-blue txt-center mb-20px"><span class="bb-green">Régime de la garde</span></h5>
+        <%= f.input :regime, as: :radio_buttons, collection: Dossier::REGIME, label:false%>
+      </div>
+
+    <div class="input-blue flex-45percent">
+      <div class="icon"><i class="fa fa-euro" aria-hidden="true"></i></div>
+      <div class="text"><%= f.input :revenu_parent_debiteur, label:false, placeholder:"Revenus du parent débiteur"%></div>
+    </div>
+
+    <div class="input-blue flex-45percent">
+      <div class="icon"><i class="fa fa-child" aria-hidden="true"></i></div>
+      <div class="text"><%= f.input :nb_enfant_a_charge, label:false, placeholder:"Nombre d'enfants à charge" %></div>
+    </div>
+
+      <div class="flex-100percent">
+        <div>
+          <h5 class="no-margin color-dark-blue txt-center mb-20px">
+          <%= f.submit "J'enregistre", class:"btn btn-default btn-submit-blue " %>
+
+          </h5>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% elsif !@dossier.nb_enfant_a_charge.nil? && @dossier.nb_enfant_a_charge != 0 && @dossier.parent_debiteur.nil? %>
+    <%= simple_form_for @dossier do |f| %>
+      <div class="flex-100percent categorie-design">
+        <h5 class="no-margin color-dark-blue txt-center mb-20px"><span class="bb-green">Parent débiteur :</span></h5>
+        <%= f.input :parent_debiteur, as: :radio_buttons, collection: Dossier::DEBIT, label:false%>
+      </div>
+      <%= f.submit "J'enregistre", class:"btn btn-default btn-submit-blue " %>
+    <% end %>
+  <% end %>
+

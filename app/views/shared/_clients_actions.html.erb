@@ -36,6 +36,8 @@
     <% end %>
   </div>
 </div>
+
+
 <% elsif @dossier %>
 <div class="w-100percent client-action txt-center mb-30px btn-medium-secondary">
   <div class="icon">
@@ -55,6 +57,23 @@
   <div class="text">
     <%= link_to clients_path(new_dossier: true, client_id: @dossier.client.id) do %>
       Nouveau dossier
+    <% end %>
+  </div>
+</div>
+<% end %>
+
+                            <!-- /////////////////////////////////////// -->
+                            <!-- QUAND JE SUIS DANS LA SHOW D'UN DOSSIER -->
+                            <!-- /////////////////////////////////////// -->
+
+<% if params[:show_dossier] == "true" %>
+  <div class="w-100percent client-action txt-center mb-30px btn-medium-secondary">
+  <div class="icon">
+    <i class="fa fa-folder" aria-hidden="true"></i>
+  </div>
+  <div class="text">
+    <%= link_to clients_path(show_dossier: true, dossier_id: @dossier.id, p_al_calc: true) do %>
+      Calcul pension alimentaire
     <% end %>
   </div>
 </div>
