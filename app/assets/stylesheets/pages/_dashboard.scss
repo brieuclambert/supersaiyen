@@ -3,10 +3,42 @@
   border-top: 0;
   height: 250px;
   padding: 5px;
-  overflow: auto;
+  overflow-y: auto;
+}
+
+.card-dashboard-todo {
+  border: solid 1px #F2F2F2;
+  border-top: 0;
+  height: 250px;
+  padding: 5px;
+
+}
+
+.card-dashboard-todo-content{
+  overflow-y: auto;
+  height: 201px;
 }
 
 .card-dashboard-content{
   margin: 5px 10px;
   border-bottom: solid 1px #F2F2F2;
+}
+
+.form-control{
+  box-shadow: none;
+}
+
+.form-control:focus{
+  box-shadow: none;
+}
+
+.list-input{
+  border-left: 0 !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  margin-left: 10px;
+}
+
+#item-submit{
+  margin-top: 8px;
 }
