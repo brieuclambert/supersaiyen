@@ -3,21 +3,144 @@
     <%= render partial: 'shared/vertical_navbar' %>
     <div class="content-right">
 
-      <div style="padding-left: 100px; margin-top: 100px;">
-        <h1 style="color: #314F69; ">Bientôt une dashboard de l'espace</h1>
-        <h2 style="color: #314F69; "> Sinon l'onglet clients est disponible</h2>
+      <div style="margin-top: 30px;">
+        <div class="row">
+
+          <!-- /////////////////// -->
+          <!-- ÉCHÉANCES COLONNE 1 -->
+          <!-- /////////////////// -->
+
+          <div class="col-md-4">
+            <div class="row">
+              <div class="title txt-center">
+                <h4 class="no-margin color-dark-blue"><span class="bb-green">Échéances</span></h4>
+              </div>
+            </div>
+            <div class="card-dashboard" style="border-left: 0;">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-dashboard-content">
+                    <p class="client-info">Mise en demeure Brieuc</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-dashboard-content">
+                    <p class="client-info">Deadline dépot dossier Alizée</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-dashboard-content">
+                    <p class="client-info">J-4 avant audience JCVD</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-dashboard-content">
+                    <p class="client-info">Début médiation Crédit du Nord</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-dashboard-content">
+                    <p class="client-info">J-7 audience divorce Jean-Michel</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-dashboard-content">
+                    <p class="client-info">J-4 avant audience JCVD</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-dashboard-content">
+                    <p class="client-info">J-4 avant audience JCVD</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /////////////////// -->
+          <!-- TO DO COLONNE 2 -->
+          <!-- /////////////////// -->
+
+
+          <div class="col-md-4">
+            <div class="row">
+              <div class="title txt-center">
+                <h4 class="no-margin color-dark-blue"><span class="bb-green">To-Do List</span></h4>
+              </div>
+            </div>
+            <div class="card-dashboard">
+              <div class="row">
+
+              </div>
+            </div>
+          </div>
+
+          <!-- /////////////////// -->
+          <!-- METRICS COLONNE 3 -->
+          <!-- /////////////////// -->
+
+          <div class="col-md-4">
+            <div class="row">
+              <div class="title txt-center">
+                <h4 class="no-margin color-dark-blue"><span class="bb-green">Chiffres clé</span></h4>
+              </div>
+            </div>
+            <div class="card-dashboard" style="border-right: 0; padding-top: 10px;">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-dashboard-content">
+                    <p class="client-info">Clients du mois : <span class="client-info-content"><%= @clients.count %></span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-dashboard-content">
+                    <p class="client-info">Dossiers du mois : <span class="client-info-content"><%= @dossiers.count %></span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-dashboard-content">
+                    <p class="client-info">Heures facturées du mois : <span class="client-info-content"><%= @dossiers.count * 6 %></span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-dashboard-content">
+                    <p class="client-info">Dossiers en cours : <span class="client-info-content"><%= rand(1..@dossiers.count) %></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <h3>En attendant, des doggo</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/59Zcx9YbZxI" frameborder="0" allowfullscreen></iframe>
+      </div>
+
     </div>
   </div>
 </div>
 
 <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-  $('#calculator-path-btn').removeClass("active");
-  $('#clients-path-btn').removeClass("active");
-  $('#dashboard-path-btn').addClass("active");
+<%= javascript_tag do %>
+$('#calculator-path-btn').removeClass("active");
+$('#clients-path-btn').removeClass("active");
+$('#dashboard-path-btn').addClass("active");
 
-  <% end %>
+
+<% end %>
 <% end %>

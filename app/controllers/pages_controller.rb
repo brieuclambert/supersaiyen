@@ -6,5 +6,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @clients = Client.all
+    @dossiers = Dossier.all
   end
 end
