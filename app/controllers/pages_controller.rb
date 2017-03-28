@@ -7,5 +7,7 @@ class PagesController < ApplicationController
   def dashboard
     @clients = Client.all
     @dossiers = Dossier.all
+    @item = Item.new
+    @items = Item.all
   end
 end

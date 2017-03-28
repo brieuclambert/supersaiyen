@@ -81,8 +81,26 @@
               </div>
             </div>
             <div class="card-dashboard">
+              <% @items.each do |item| %>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="card-dashboard-content">
+                      <p class="client-info"><%= item.content %></p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
               <div class="row">
-
+                <%= simple_form_for @item do |f| %>
+                  <div class="col-md-9">
+                    <div class="input-blue">
+                      <div class="text"><%= f.input :content, label: false %></div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <%= f.submit "Add", class: "btn btn-default btn-submit-blue" %>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>

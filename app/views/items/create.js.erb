@@ -1,0 +1,11 @@
+<% if @item.errors.any? %>
+  // TODO render the form with errors
+<% else %>
+  var new_item = $('<%= j render "items/item", item: @item %>').hide();
+  // Add it to the DOM, at the end of the existing items. It's still hidden.
+  $('#items').append(new_item);
+  // Show the new item with an animation!
+  new_item.slideDown();
+  // reset the form
+  $('#item_content').val('');
+<% end %>
