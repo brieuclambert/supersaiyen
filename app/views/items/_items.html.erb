@@ -1,0 +1,11 @@
+<div class="card-dashboard-todo-content">
+  <% @items.order("id desc").each do |item| %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card-dashboard-content">
+        <p class="client-info"><%= item.content %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
