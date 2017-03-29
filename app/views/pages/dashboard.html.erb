@@ -81,29 +81,8 @@
               </div>
             </div>
             <div class="card-dashboard-todo">
-              <div class="card-dashboard-todo-content">
-                <% @items.order("id desc").each do |item| %>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="card-dashboard-content">
-                        <p class="client-info"><%= item.content %></p>
-                      </div>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-              <div class="row">
-                <%= simple_form_for @item do |f| %>
-                  <div class="col-md-9">
-                    <div class="input-blue input-dashboard">
-                      <div class="text list-input"><%= f.input :content, label: false, id:'item-input' %></div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <%= f.submit "Add", class: "btn btn-default btn-submit-blue", id:'item-submit' %>
-                  </div>
-                <% end %>
-              </div>
+              <%= render partial: 'items/items' %>
+              <%= render partial: 'items/new_item' %>
             </div>
           </div>
 
@@ -118,34 +97,10 @@
               </div>
             </div>
             <div class="card-dashboard" style="border-right: 0; padding-top: 10px;">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="card-dashboard-content">
-                    <p class="client-info">Clients du mois : <span class="client-info-content"><%= @clients.count %></span></p>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="card-dashboard-content">
-                    <p class="client-info">Dossiers du mois : <span class="client-info-content"><%= @dossiers.count %></span></p>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="card-dashboard-content">
-                    <p class="client-info">Heures facturées du mois : <span class="client-info-content"><%= @dossiers.count * 6 %></span></p>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="card-dashboard-content">
-                    <p class="client-info">Dossiers en cours : <span class="client-info-content"><%= rand(1..@dossiers.count) %></span></p>
-                  </div>
-                </div>
-              </div>
+              <%= render partial: 'metrics/clients_count' %>
+              <%= render partial: 'metrics/dossiers_count' %>
+              <%= render partial: 'metrics/heures_facture' %>
+              <%= render partial: 'metrics/dossiers_ongoing' %>
             </div>
           </div>
         </div>
